@@ -1,0 +1,30 @@
+name: Development workflow
+
+on:
+  push:
+    branches:
+      - test
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20.10.0'
+      - run: npm install
+      - run: npm run build
+
+      - name: Deploy to netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=public --prod
+        env:
+          NETLIFY_SITE_ID: a6f14e65-467e-425a-b943-8953f3065174
+          NETLIFY_AUTH_TOKEN: nfp_sHy18yHotywp3DdDHAbiLW3fSau7GV2Ub147
