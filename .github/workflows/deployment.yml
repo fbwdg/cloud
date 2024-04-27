@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
 
       - name: Deploy to netlify
-        uses: netlify/actions/cli@main
+        uses: netlify/actions/cli@test
         with:
           args: deploy --dir=public --prod
         env:
