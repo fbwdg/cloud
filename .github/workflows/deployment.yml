@@ -22,9 +22,9 @@ jobs:
       - run: npm run build
 
       - name: Deploy to netlify
-        uses: netlify/actions/cli@test
+        uses: netlify/actions/cli@master
         with:
-          args: deploy --dir=public --prod
+          args: deploy --dir=dist --prod
         env:
           NETLIFY_SITE_ID: a6f14e65-467e-425a-b943-8953f3065174
           NETLIFY_AUTH_TOKEN: nfp_sHy18yHotywp3DdDHAbiLW3fSau7GV2Ub147
