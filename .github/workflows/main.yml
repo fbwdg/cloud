@@ -23,7 +23,7 @@ jobs:
 
       # 打包文档
       - name: Build
-        run: npm build
+        run: npm run build
 
       # https://github.com/peaceiris/actions-gh-pages#readme
       - name: Deploy
