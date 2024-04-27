@@ -14,20 +14,9 @@ jobs:
       # 下载仓库代码 / 校验
       - name: Checkout
         uses: actions/checkout@v3
-
-      # 安装 pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        #安装npm
         with:
-          version: 6
-
-      # 安装 node pnpm
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          cache: 'pnpm'
-
+          npm-version: 10.x
       # 安装依赖项
       - name: Install
         run: npm i
